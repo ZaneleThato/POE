@@ -4,6 +4,7 @@ using System.IO;
 
 namespace POE
 {
+    //Manages the chat history memory
     public class MemoryManager
     {
         private string GetFilePath()

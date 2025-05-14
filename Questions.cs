@@ -5,6 +5,7 @@ using System.Text.RegularExpressions;
 
 namespace POE
 {
+    //holds possible questions
     public class Questions
     {
         private readonly MemoryManager memoryManager = new MemoryManager();
@@ -51,6 +52,8 @@ namespace POE
         private Dictionary<string, string> userMemory = new Dictionary<string, string>();
         private Random random = new Random();
 
+
+        //Dispalys Welcome text
         public string DisplayWelcomeText()
         {
             Console.ForegroundColor = ConsoleColor.Blue;
@@ -103,6 +106,7 @@ namespace POE
             return userName;
         }
 
+        //Dictates how to interact with the user
         public void InteractWithUser(string userName)
         {
             string userInput;
@@ -136,6 +140,7 @@ namespace POE
             Console.WriteLine($"Thank you for the visit, {userName}! Come again soon!");
         }
 
+       //Displays chat history
         private string ProcessUserInput(string userInput)
         {
             if (userInput == "history")
@@ -178,6 +183,7 @@ namespace POE
             return "I'm not sure about that. Can you ask me something related to cybersecurity?";
         }
 
+        //Randomises answers
         private string GetRandomResponse(string key)
         {
             if (keywordResponses.ContainsKey(key))
@@ -186,6 +192,7 @@ namespace POE
             return securityTips[random.Next(securityTips.Count)];
         }
 
+        //Dictates the response display
         private void ShowResponse(string message)
         {
             Console.ForegroundColor = ConsoleColor.DarkCyan;
