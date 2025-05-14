@@ -1,4 +1,6 @@
-﻿namespace Poe_prog2
+﻿using POE;
+
+namespace Poe_prog2
 {
     // Menu class that manages user interactions and calls other subclasses
     public class Menu
